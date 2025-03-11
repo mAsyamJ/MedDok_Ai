@@ -1,1 +1,24 @@
-service : { greet : (text) -> (text) query; set_greeting : (text) -> () }
+module {
+  type Patient = record {
+    id: text;
+    name: text;
+    phone: text;
+    gender: text;
+    dob: text;
+    height: text;
+    weight: text;
+    houseaddr: text;
+    bloodgroup: text;
+    allergies: text;
+    medication: text;
+    emergencyName: text;
+    emergencyContact: text;
+  };
+
+  service : {
+    predictDisease : (text) -> (text) query;
+    encryptPatientData : (text) -> (text);
+    savePatientData : (Patient) -> ();
+    getPatientData : (text) -> (opt Patient) query;
+  }
+}
