@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --glow-primary: rgba(99, 102, 241, 0.4);
+  --glow-secondary: rgba(139, 92, 246, 0.3);
+  --glow-accent: rgba(236, 72, 153, 0.2);
+  --glow-success: rgba(34, 197, 94, 0.3);
+  --glow-error: rgba(239, 68, 68, 0.3);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(17, 24, 39);
+}
+
+.dashboard-card {
+  @apply glass-effect rounded-xl p-6 transition-all duration-300 border border-indigo-500/20;
+  box-shadow: 0 0 20px var(--glow-primary);
+}
+
+.dashboard-card:hover {
+  @apply transform scale-[1.02] border-indigo-500/40;
+  box-shadow: 0 0 20px var(--glow-primary),
+              0 0 40px var(--glow-secondary);
+}
+
+.metric-card {
+  @apply dashboard-card relative overflow-hidden;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.4));
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    var(--glow-primary),
+    var(--glow-secondary),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.metric-card:hover::before {
+  opacity: 0.4;
+}
+
+.glass-effect {
+  backdrop-filter: blur(12px);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.8) 0%,
+    rgba(30, 41, 59, 0.4) 100%
+  );
+}
+
+.nav-button {
+  @apply transition-all duration-300 hover:bg-indigo-500/10 hover:scale-110;
+}
+
+.nav-button.active-nav {
+  @apply bg-indigo-500/20;
+  box-shadow: 0 0 20px var(--glow-primary);
+}
+
+.glow-text {
+  @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+}
+
+.space-gradient {
+  background: radial-gradient(
+    circle at center,
+    rgba(99, 102, 241, 0.2) 0%,
+    rgba(139, 92, 246, 0.15) 25%,
+    rgba(236, 72, 153, 0.1) 50%,
+    transparent 100%
+  );
+  animation: pulse-space 8s ease-in-out infinite;
+}
+
+@keyframes pulse-space {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.5) rgba(30, 41, 59, 0.8);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 3px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.5);
+  border-radius: 3px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
+}

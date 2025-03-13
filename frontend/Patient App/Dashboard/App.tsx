@@ -11,16 +11,18 @@ import {
   Footprints,
   Flame,
   Timer,
+  DollarSign,
 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import DashboardCard from './components/DashboardCard';
-import MetricCard from './components/MetricCard';
+import MetricCard from './components/MetricCard'; // Import the MetricCard component
+import PatientBalanceCard from './components/PatientBalanceCard'; // Import the PatientBalanceCard component
 import {
   heartRateData,
   dailyActivity,
   upcomingAppointments,
   recentHealthRecords,
-} from './mockData';
+} from '../mockData';
 
 function App() {
   return (
@@ -110,6 +112,8 @@ function App() {
             />
           </div>
 
+          <PatientBalanceCard /> {/* Add the PatientBalanceCard component */}
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             <DashboardCard title="Heart Rate">
               <div className="h-96">
@@ -182,7 +186,7 @@ function App() {
 
           <DashboardCard title="Recent Health Records">
             <div className="space-y-6">
-              {recentHealthRecords.map((record) => (
+              {recentHealthRecords.map((record: { id: string; type: string; provider: string; date: string; description: string }) => (
                 <div
                   key={record.id}
                   className="glass-effect p-6 rounded-xl hover-glow transition-all duration-300"

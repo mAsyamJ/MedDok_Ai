@@ -1,4 +1,4 @@
-import { HealthMetric, DailyActivity, Appointment, HealthRecord } from './types';
+import { HealthMetric, DailyActivity, Appointment, HealthRecord } from './Dashboard/types';
 
 export const heartRateData: HealthMetric[] = [
   { date: '2024-03-01', value: 72 },
@@ -15,6 +15,17 @@ export const dailyActivity: DailyActivity = {
   calories: 2150,
   distance: 6.2,
   activeMinutes: 45,
+};
+
+export const patientBalance = {
+  balance: 1200.50,
+  monthlyBilling: [
+    { month: 'January', amount: 300 },
+    { month: 'February', amount: 250 },
+    { month: 'March', amount: 400 },
+    { month: 'April', amount: 250 },
+  ],
+  loans: 500,
 };
 
 export const upcomingAppointments: Appointment[] = [

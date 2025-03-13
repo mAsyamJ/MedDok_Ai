@@ -16,7 +16,7 @@ body {
     'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+  background: black; /* Changed to black */
   min-height: 100vh;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .glow-effect:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .glow-effect::before {
@@ -47,7 +47,7 @@ body {
 .glow-effect::after {
   content: '';
   position: absolute;
-  inset: 1px;
+  inset: 0.5px;
   background: inherit;
   border-radius: inherit;
   z-index: -1;
@@ -67,10 +67,10 @@ body {
 .glass-effect:hover {
   background: linear-gradient(
     135deg,
-    rgba(30, 41, 59, 0.9) 0%,
-    rgba(30, 41, 59, 0.5) 100%
+    rgba(30, 41, 59, 0.85) 0%,
+    rgba(30, 41, 59, 0.45) 100%
   );
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .hover-glow {
@@ -78,9 +78,9 @@ body {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 30px var(--glow-primary),
-              0 0 60px var(--glow-secondary),
-              0 0 90px var(--glow-accent);
+  box-shadow: 0 0 10px var(--glow-primary),
+              0 0 20px var(--glow-secondary),
+              0 0 30px var(--glow-accent);
   transform: translateY(-4px) scale(1.02);
 }
 
@@ -123,6 +123,59 @@ body {
   animation: shimmer 3s infinite;
 }
 
+/* index.css */
+
+.billing-dropdown-header:hover {
+  background-color: #4a5568; /* Or your desired gray color */
+}
+
+.metric-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    var(--glow-primary),
+    var(--glow-secondary),
+    transparent 70%
+  );
+  border-radius: inherit;
+  z-index: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.metric-glow:hover::before {
+  opacity: 1;
+}
+
+.metric-glow::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.2) 20%,
+    transparent 100%
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
 .chart-gradient {
   background: linear-gradient(180deg, 
     rgba(99, 102, 241, 0.3) 0%,
@@ -217,8 +270,8 @@ body {
 .nav-button:hover {
   background: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.2) 0%,
-    rgba(139, 92, 246, 0.15) 100%
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 100%
   );
   box-shadow: 0 0 20px var(--glow-primary),
               0 0 40px var(--glow-secondary);
