@@ -20,6 +20,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const navigate = useNavigate();
+
   const [user, setUser] = useState<{ role: string } | null>(() => {
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;

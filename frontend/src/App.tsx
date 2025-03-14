@@ -18,9 +18,9 @@ export default function App() {
               <Route
                 path="/dashboard"
                 element={
-                  // <ProtectedRoute>
-                  <Dashboard />
-                  // </ProtectedRoute>
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
                 }
               ></Route>
               <Route path="/404" element={<Error />} />

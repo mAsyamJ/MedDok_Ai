@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/UseAuth';
+import { AuthClient } from '@dfinity/auth-client';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {

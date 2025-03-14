@@ -1,0 +1,3 @@
+service : {
+  predictDisease: (text) -> (text) query;
+}

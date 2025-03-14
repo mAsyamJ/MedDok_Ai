@@ -9,7 +9,7 @@ export default function ProtectedRoute({
 }: ProtectedRouteProps) {
   const { user } = useAuth();
 
-  if (!user || !(role && user.role !== role)) {
+  if (!user) {
     return <Navigate to={'/404'} replace />;
   }
   return children;
