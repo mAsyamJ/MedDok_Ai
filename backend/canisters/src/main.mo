@@ -1,5 +1,7 @@
-actor App{
-  public query func predictDisease(input : Text) : async Text {
-    return "Predicted Disease: " # input;
+import Principal "mo:base/Principal";
+
+persistent actor Whoami {
+  public query (message) func whoami() : async Principal {
+    message.caller;
   };
-  }
+};

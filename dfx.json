@@ -11,17 +11,26 @@
       "args": "--enhanced-orthogonal-persistence"
     },
     "frontend": {
-      "dependencies": ["backend"],
-      "frontend": {
+      "dependencies": [
+        "backend",
+        "internet_identity"
+      ],
+        "frontend": {
         "entrypoint": "frontend/index.html"
       },
       "source": ["frontend/dist"],
       "type": "assets"
     },
     "internet_identity": {
-      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
       "type": "custom",
-      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "frontend": {}
     },
     "llm": {
       "candid": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.did",

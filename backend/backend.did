@@ -14,9 +14,9 @@ type Patient = record {
   emergencyContact: text;
 };
 
-service : {
-  predictDisease : (text) -> (text) query;
-  encryptPatientData : (text) -> (text);
-  savePatientData : (Patient) -> ();
-  getPatientData : (text) -> (opt Patient) query;
-};
+// service : {
+//   predictDisease : (text) -> (text) query;
+//   encryptPatientData : (text) -> (text);
+//   savePatientData : (Patient) -> ();
+//   getPatientData : (text) -> (opt Patient) query;
+// };
