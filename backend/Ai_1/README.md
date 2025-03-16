@@ -1,5 +1,5 @@
-![image](https://github.com/user-attachments/assets/008ada9c-8e48-4eba-91e5-541b35c9de70)
 
+![Screenshot 2025-03-16 125824](https://github.com/user-attachments/assets/c4892fc2-d021-44dd-b19b-444c3ce7f493)
 
 # Project Setup Guide
 
