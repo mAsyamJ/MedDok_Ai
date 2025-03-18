@@ -9,7 +9,7 @@ export default function ProtectedRoute({
 }: ProtectedRouteProps) {
   const { user } = useAuth();
 
-  if (!user) {
+  if (!user.isAuthenticated) {
     return <Navigate to={'/404'} replace />;
   }
   return children;

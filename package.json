@@ -10,6 +10,7 @@
     "frontend"
   ],
   "dependencies": {
+    "@dfinity/agent": "^2.3.0",
     "ic-auth": "^0.9.1"
   }
 }

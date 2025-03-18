@@ -1,22 +1,12 @@
-type Patient = record {
-  id: text;
-  name: text;
-  phone: text;
-  gender: text;
-  dob: text;
-  height: text;
-  weight: text;
-  houseaddr: text;
-  bloodgroup: text;
-  allergies: text;
-  medication: text;
-  emergencyName: text;
-  emergencyContact: text;
+type User = record {
+    name: text;
+    role: text;
 };
 
-// service : {
-//   predictDisease : (text) -> (text) query;
-//   encryptPatientData : (text) -> (text);
-//   savePatientData : (Patient) -> ();
-//   getPatientData : (text) -> (opt Patient) query;
-// };
+service : {
+    whoami: () -> (principal) query;
+    addUser: (text, text) -> ();
+    addNewUser: (text) -> ();
+    getUser: (principal) -> (opt User);
+    getMyProfile: () -> (opt User);
+}

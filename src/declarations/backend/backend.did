@@ -1,3 +1,12 @@
+type User = 
+ record {
+   name: text;
+   role: text;
+ };
 service : {
+  addNewUser: (text) -> (text);
+  addUser: (text, text) -> (opt User);
+  getMyProfile: () -> (opt User);
+  getUser: (principal) -> (opt User);
   whoami: () -> (principal) query;
 }

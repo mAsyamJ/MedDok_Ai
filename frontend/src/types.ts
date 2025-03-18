@@ -1,3 +1,5 @@
+import { ActorSubclass } from '@dfinity/agent';
+import { AuthClient } from '@dfinity/auth-client';
 import React from 'react';
 
 export interface HealthMetric {
@@ -30,5 +32,31 @@ export interface HealthRecord {
 }
 export interface ProtectedRouteProps {
   role?: string ;
+  children: React.ReactNode;
+}
+
+export interface User{
+     actor: ActorSubclass<any> | undefined;
+      authClient: AuthClient | undefined;
+      isAuthenticated: boolean | undefined;
+      principal: string |undefined;
+      role?: string;
+}
+export interface ButtonLoginProps{
+  user: User |null;
+  login: () => void;
+  logout: () => void;
+  provider: string;
+  logo: React.ReactNode|string;
+}
+
+export interface AuthContextType {
+  user: User | null;
+  login: (role:string, provider) => void;
+  logout: () => void;
+}
+
+// Definisi tipe untuk AuthProvider props
+export interface AuthProviderProps {
   children: React.ReactNode;
 }
