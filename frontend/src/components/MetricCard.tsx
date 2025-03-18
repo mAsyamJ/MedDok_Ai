@@ -9,9 +9,17 @@ interface MetricCardProps {
   className?: string;
 }
 
-const MetricCard: React.FC<MetricCardProps> = ({ title, value, icon: Icon, trend, className = '' }) => {
+const MetricCard: React.FC<MetricCardProps> = ({
+  title,
+  value,
+  icon: Icon,
+  trend,
+  className = '',
+}) => {
   return (
-    <div className={`metric-glow glass-effect rounded-xl p-6 hover-glow transition-all duration-300 ${className}`}>
+    <div
+      className={`metric-glow glass-effect rounded-xl p-6 hover-glow transition-all duration-300 ${className}`}
+    >
       <div className="relative z-10 flex items-center">
         <div className="bg-gradient-to-br from-indigo-500/30 to-purple-500/30 p-4 rounded-xl animate-pulse">
           <Icon className="w-8 h-8 text-indigo-400" />
@@ -22,8 +30,13 @@ const MetricCard: React.FC<MetricCardProps> = ({ title, value, icon: Icon, trend
             {value}
           </p>
           {trend !== undefined && (
-            <p className={`text-sm font-medium ${trend >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-              {trend >= 0 ? '+' : ''}{trend}%
+            <p
+              className={`text-sm font-medium ${
+                trend >= 0 ? 'text-emerald-400' : 'text-rose-400'
+              }`}
+            >
+              {trend >= 0 ? '+' : ''}
+              {trend}%
             </p>
           )}
         </div>

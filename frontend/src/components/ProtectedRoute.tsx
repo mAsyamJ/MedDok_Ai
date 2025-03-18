@@ -1,16 +1,14 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useAuth } from '../hooks/UseAuth';
 import { ProtectedRouteProps } from '../types';
 
-export default function ProtectedRoute({
-  role,
-  children,
-}: ProtectedRouteProps) {
+export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   const { user } = useAuth();
-
-  if (!user.isAuthenticated) {
-    return <Navigate to={'/404'} replace />;
-  }
+  useEffect(() => {
+    if (!user?.actor) return;
+    if (!user?.isAuthenticated) {
+      window.location.replace('/404');
+    }
+  }, [user]);
   return children;
 }

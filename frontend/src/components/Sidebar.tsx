@@ -2,15 +2,10 @@ import {
   Activity,
   Calendar,
   FileText,
-  Heart,
   LogOut,
-  MessageSquare,
   Settings,
   Stethoscope,
-  User,
-  Users,
 } from 'lucide-react';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/UseAuth';
 import { UserRole } from '../constants/userRole';
@@ -25,52 +20,25 @@ export default function Sidebar() {
 
         {/* logo doctor*/}
         {user?.role == UserRole.DOCTOR && (
-          <Stethoscope className="w-6 h-6 md:w-7 md:h-7" />
+          <Link to={'/dashboard'} className="w-6 h-6 md:w-7 md:h-7">
+            <Stethoscope />
+          </Link>
         )}
       </div>
       <div className="flex flex-col items-center space-y-10">
         {/* to manage .. */}
-        <Link to={'/heart'} className="nav-button active-nav p-4 rounded-xl">
-          <Heart className="w-7 h-7 text-indigo-400" />
-        </Link>
         <Link
-          to={'/calendar'}
+          to={'/dashboard/appointments'}
           className="nav-button p-4 rounded-xl text-gray-400"
         >
           <Calendar className="w-7 h-7" />
         </Link>
         {user?.role == UserRole.PATIENT && (
           <Link
-            to={'/file-text'}
+            to={'/dashboard/medical-history'}
             className="nav-button p-4 rounded-xl text-gray-400"
           >
             <FileText className="w-7 h-7" />
-          </Link>
-        )}
-        {/* chat feature */}
-        {user?.role == UserRole.DOCTOR && (
-          <Link
-            to={'/message'}
-            className="nav-button p-4 rounded-xl text-gray-400"
-          >
-            <MessageSquare className="w-6 h-6 md:w-7 md:h-7" />
-          </Link>
-        )}
-
-        {user?.role == UserRole.PATIENT && (
-          <Link
-            to={'/user'}
-            className="nav-button p-4 rounded-xl text-gray-400"
-          >
-            <User className="w-7 h-7" />
-          </Link>
-        )}
-        {user?.role == UserRole.PATIENT && (
-          <Link
-            to={'/users'}
-            className="nav-button p-4 rounded-xl text-gray-400"
-          >
-            <Users className="w-7 h-7" />
           </Link>
         )}
       </div>

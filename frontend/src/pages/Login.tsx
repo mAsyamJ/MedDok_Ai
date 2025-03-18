@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NfidLogo from '../assets/img/nfid.png';
-import { CreateActor, HelloIDL, NFIDLogin, Types } from 'ic-auth';
 import { InternetIdentityLogo } from '../assets/logo/Logo';
-import { canisterId } from '../../../src/declarations/backend';
 import { ButtonLoginProps } from '../types';
 import { useAuth } from '../hooks/UseAuth';
 import { useNavigate } from 'react-router-dom';
@@ -43,10 +41,10 @@ export default function Login() {
   const { login, logout, user } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    if (user.isAuthenticated) {
+    if (user?.isAuthenticated) {
       navigate('/dashboard');
     }
-  }, [navigate, user.isAuthenticated]);
+  }, [navigate, user?.isAuthenticated]);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">

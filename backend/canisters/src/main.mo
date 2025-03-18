@@ -35,4 +35,8 @@ actor Main {
         let userKey = { hash = Principal.hash(caller); key = caller };
         Trie.get(userProfiles, userKey, Principal.equal)
     };
+    public func helloWorld(){
+        Debug.print("Hello World");
+    }
+
 };

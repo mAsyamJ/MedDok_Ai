@@ -4,9 +4,8 @@ type User =
    role: text;
  };
 service : {
-  addNewUser: (text) -> (text);
   addUser: (text, text) -> (opt User);
   getMyProfile: () -> (opt User);
   getUser: (principal) -> (opt User);
-  whoami: () -> (principal) query;
+  helloWorld: () -> () oneway;
 }
