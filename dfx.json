@@ -1,7 +1,7 @@
 {
   "canisters": {
     "backend": {
-      "main": "backend/canisters/src/main.mo",
+      "main": "backend/main.mo",
       "candid": "backend/backend.did",
       "type": "motoko",
       "shrink": true,

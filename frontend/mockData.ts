@@ -1,24 +1,15 @@
-import { HealthMetric, DailyActivity, Appointment, HealthRecord } from './src/types';
-
-export const heartRateData: HealthMetric[] = [
-  { date: '2024-03-01', value: 72 },
-  { date: '2024-03-02', value: 75 },
-  { date: '2024-03-03', value: 71 },
-  { date: '2024-03-04', value: 73 },
-  { date: '2024-03-05', value: 70 },
-  { date: '2024-03-06', value: 74 },
-  { date: '2024-03-07', value: 76 },
-];
+import { Activity, AlertCircle, Calendar, Heart, Pill, User } from 'lucide-react'
+import { DailyActivity, Appointment, HealthRecord } from './src/types'
 
 export const dailyActivity: DailyActivity = {
   steps: 8432,
   calories: 2150,
   distance: 6.2,
   activeMinutes: 45,
-};
+}
 
 export const patientBalance = {
-  balance: 1200.50,
+  balance: 1200.5,
   monthlyBilling: [
     { month: 'January', amount: 300 },
     { month: 'February', amount: 250 },
@@ -26,7 +17,7 @@ export const patientBalance = {
     { month: 'April', amount: 250 },
   ],
   loans: 500,
-};
+}
 
 export const upcomingAppointments: Appointment[] = [
   {
@@ -45,7 +36,7 @@ export const upcomingAppointments: Appointment[] = [
     time: '2:15 PM',
     status: 'upcoming',
   },
-];
+]
 
 export const recentHealthRecords: HealthRecord[] = [
   {
@@ -62,7 +53,7 @@ export const recentHealthRecords: HealthRecord[] = [
     provider: 'Community Health Center',
     description: 'COVID-19 Booster',
   },
-];
+]
 export const revenueData = [
   { month: 'January 2024', amount: 154873 },
   { month: 'December 2023', amount: 142650 },
@@ -70,13 +61,13 @@ export const revenueData = [
   { month: 'October 2023', amount: 145670 },
   { month: 'September 2023', amount: 149800 },
   { month: 'August 2023', amount: 136540 },
-];
+]
 
 export const doctorStats = {
   rank: 3,
   rating: 4.8,
   consultations: 145,
-};
+}
 
 export const programMetrics = [
   {
@@ -94,9 +85,7 @@ export const programMetrics = [
     value: 128,
     subtitle: 'Active Patients',
   },
-];
-
-
+]
 
 export const ccmBilling = {
   nonComplex: [
@@ -107,9 +96,9 @@ export const ccmBilling = {
   ],
   complex: [
     { code: '99487', amount: 134.27 },
-    { code: '99489', amount: 70.60 },
+    { code: '99489', amount: 70.6 },
   ],
-};
+}
 
 export const todaysTasks = [
   {
@@ -142,7 +131,7 @@ export const todaysTasks = [
     task: 'Check Alerts',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
-];
+]
 
 export const patients = [
   {
@@ -223,4 +212,81 @@ export const patients = [
     monthlyMins: 25,
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
-];
+]
+// Input field configurations
+export const basicInfoFields = [
+  {
+    name: 'patientName',
+    label: 'Patient Name',
+    type: 'text',
+    icon: User,
+    placeholder: 'Enter patient name',
+  },
+  {
+    name: 'dateOfBirth',
+    label: 'Date of Birth',
+    type: 'date',
+    icon: Calendar,
+  },
+  {
+    name: 'bloodType',
+    label: 'Blood Type',
+    type: 'select',
+    icon: Heart,
+    options: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+  },
+]
+
+export const listFields = [
+  {
+    name: 'allergies',
+    label: 'Allergies',
+    icon: AlertCircle,
+    placeholder: 'Add allergy',
+  },
+  {
+    name: 'currentMedications',
+    label: 'Current Medications',
+    icon: Pill,
+    placeholder: 'Add medication',
+  },
+  {
+    name: 'chronicConditions',
+    label: 'Chronic Conditions',
+    icon: Activity,
+    placeholder: 'Add condition',
+  },
+]
+
+export const vitalSignFields = [
+  {
+    name: 'bloodPressure',
+    label: 'Blood Pressure',
+    placeholder: '120/80',
+    unit: 'mmHg',
+  },
+  {
+    name: 'heartRate',
+    label: 'Heart Rate',
+    placeholder: '72',
+    unit: 'bpm',
+  },
+  {
+    name: 'temperature',
+    label: 'Temperature',
+    placeholder: '37.0',
+    unit: '°C',
+  },
+  {
+    name: 'weight',
+    label: 'Weight',
+    placeholder: '70',
+    unit: 'kg',
+  },
+  {
+    name: 'height',
+    label: 'Height',
+    placeholder: '170',
+    unit: 'cm',
+  },
+]

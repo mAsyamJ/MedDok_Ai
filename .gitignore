@@ -10,6 +10,7 @@ package-lock.json
 .dfx/local/
 .dfx/cache/
 target/
+.
 
 # Webpack / Vite / React build output
 frontend/dist/
@@ -54,8 +55,3 @@ vessel-packages/
 # WASM Build Output
 *.wasm
 *.mo.map
-
-.dfx/
-.mops/
-.VsCodeCounter/
-src/
