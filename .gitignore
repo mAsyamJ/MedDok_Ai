@@ -54,3 +54,8 @@ vessel-packages/
 # WASM Build Output
 *.wasm
 *.mo.map
+
+.dfx/
+.mops/
+.VsCodeCounter/
+src/
