@@ -1,7 +1,8 @@
 # 🏥 MedDok
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![ICP](https://img.shields.io/badge/Internet%20Computer-Protocol-orange)](https://internetcomputer.org/)
+[![I![Screenshot 2025-03-14 151213](https://github.com/user-attachments/assets/258d6d87-b909-4515-a29f-dbd51264003f)
+CP](https://img.shields.io/badge/Internet%20Computer-Protocol-orange)](https://internetcomputer.org/)
 [![React](https://img.shields.io/badge/React-TypeScript-61dafb)](https://reactjs.org/)
 
 > A Web3-based medical documentation platform built on the Internet Computer Protocol (ICP).
